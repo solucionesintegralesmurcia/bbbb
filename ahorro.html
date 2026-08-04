@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Ahorro e Interés Compuesto | CalculaTusFinanzas</title>
+<meta name="description" content="Calcula cuánto crece tu ahorro con aportaciones mensuales e interés compuesto a lo largo de los años.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Calcula<span class="dot">Tus</span>Finanzas</a>
+    <nav class="main">
+      <a href="nomina.html">Nómina</a>
+      <a href="hipoteca.html">Hipoteca</a>
+      <a href="irpf.html">IRPF</a>
+      <a href="ahorro.html" class="active">Ahorro</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap calc-page">
+  <h1>Calculadora de ahorro (interés compuesto)</h1>
+  <p class="sub">Calcula cuánto puede crecer tu capital con aportaciones periódicas y un interés anual estimado.</p>
+
+  <div class="calc-layout">
+    <div class="form-box">
+      <div class="field">
+        <label for="inicial">Capital inicial (€)</label>
+        <input type="number" id="inicial" placeholder="Ej. 2000">
+      </div>
+      <div class="field">
+        <label for="mensual">Aportación mensual (€)</label>
+        <input type="number" id="mensual" placeholder="Ej. 150">
+      </div>
+      <div class="field">
+        <label for="interes">Interés anual estimado (%)</label>
+        <input type="number" step="0.01" id="interes" placeholder="Ej. 6">
+      </div>
+      <div class="field">
+        <label for="aniosAhorro">Plazo (años)</label>
+        <input type="number" id="aniosAhorro" placeholder="Ej. 15">
+      </div>
+      <button class="calc-btn" onclick="calcularAhorro()">Calcular ahorro</button>
+    </div>
+
+    <div class="receipt" id="resultado">
+      <div class="r-empty">Introduce el interés anual y el plazo.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ad-slot">Espacio publicitario</div>
+</div>
+
+<section class="wrap info-block">
+  <h2>Qué es el interés compuesto</h2>
+  <p>Cada mes los intereses generados se suman al capital, y a partir de ahí también generan intereses. Por eso el crecimiento se acelera con el tiempo: cuanto más largo es el plazo, mayor es la parte del capital final que proviene de intereses y no de aportaciones.</p>
+  <h2>Aviso</h2>
+  <p>El interés anual es una estimación que tú introduces; los productos reales de ahorro o inversión no garantizan una rentabilidad fija y pueden tener fiscalidad asociada.</p>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 CalculaTusFinanzas</span>
+    <div>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

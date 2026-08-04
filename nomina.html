@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Nómina 2026: de Bruto a Neto | CalculaTusFinanzas</title>
+<meta name="description" content="Calcula tu salario neto a partir del bruto anual: Seguridad Social, retención IRPF y líquido por paga.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Calcula<span class="dot">Tus</span>Finanzas</a>
+    <nav class="main">
+      <a href="nomina.html" class="active">Nómina</a>
+      <a href="hipoteca.html">Hipoteca</a>
+      <a href="irpf.html">IRPF</a>
+      <a href="ahorro.html">Ahorro</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap calc-page">
+  <h1>Calculadora de nómina: de bruto a neto</h1>
+  <p class="sub">Introduce tu salario bruto anual y el número de pagas para ver el desglose de Seguridad Social, retención de IRPF y el neto que recibes cada mes.</p>
+
+  <div class="calc-layout">
+    <div class="form-box">
+      <div class="field">
+        <label for="bruto">Salario bruto anual (€)</label>
+        <input type="number" id="bruto" placeholder="Ej. 24000">
+      </div>
+      <div class="field">
+        <label for="pagas">Número de pagas</label>
+        <select id="pagas">
+          <option value="14">14 pagas</option>
+          <option value="12">12 pagas</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcularNomina()">Calcular nómina</button>
+    </div>
+
+    <div class="receipt" id="resultado">
+      <div class="r-empty">Introduce tu salario bruto anual.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ad-slot">Espacio publicitario</div>
+</div>
+
+<section class="wrap info-block">
+  <h2>Cómo se calcula el neto</h2>
+  <p>De tu bruto anual se descuenta primero la aportación del trabajador a la Seguridad Social (contingencias comunes, desempleo y formación, un 6,35% aproximado). Sobre la base restante se aplica la retención de IRPF según los tramos progresivos vigentes. El resultado es tu neto anual, que se reparte entre el número de pagas que tenga tu convenio.</p>
+  <h2>Aviso</h2>
+  <p>Esta calculadora ofrece una estimación orientativa. La retención real de IRPF depende de tu situación personal (hijos, discapacidad, tipo de contrato) y puede variar frente a la nómina oficial de tu empresa.</p>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 CalculaTusFinanzas</span>
+    <div>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

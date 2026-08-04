@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IRPF 2026: Tramos y Cuota | CalculaTusFinanzas</title>
+<meta name="description" content="Calcula la cuota de IRPF sobre tu base imponible según los tramos progresivos vigentes en España.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Calcula<span class="dot">Tus</span>Finanzas</a>
+    <nav class="main">
+      <a href="nomina.html">Nómina</a>
+      <a href="hipoteca.html">Hipoteca</a>
+      <a href="irpf.html" class="active">IRPF</a>
+      <a href="ahorro.html">Ahorro</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap calc-page">
+  <h1>Calculadora de IRPF</h1>
+  <p class="sub">Introduce tu base imponible anual para ver la cuota estimada de IRPF, tu tipo efectivo y la renta que te queda tras impuestos.</p>
+
+  <div class="calc-layout">
+    <div class="form-box">
+      <div class="field">
+        <label for="baseImponible">Base imponible anual (€)</label>
+        <input type="number" id="baseImponible" placeholder="Ej. 30000">
+      </div>
+      <button class="calc-btn" onclick="calcularIRPF()">Calcular IRPF</button>
+    </div>
+
+    <div class="receipt" id="resultado">
+      <div class="r-empty">Introduce tu base imponible anual.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ad-slot">Espacio publicitario</div>
+</div>
+
+<section class="wrap info-block">
+  <h2>Tramos aplicados</h2>
+  <p>Esta calculadora usa una escala general combinada (estatal + autonómica) orientativa: 19% hasta 12.450 €, 24% hasta 20.200 €, 30% hasta 35.200 €, 37% hasta 60.000 €, 45% hasta 300.000 € y 47% en adelante. Cada tramo se aplica solo a la parte de renta que cae dentro de él.</p>
+  <h2>Aviso</h2>
+  <p>Los tramos exactos varían por comunidad autónoma. Esta herramienta da una estimación general, no un cálculo oficial de la Agencia Tributaria.</p>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 CalculaTusFinanzas</span>
+    <div>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

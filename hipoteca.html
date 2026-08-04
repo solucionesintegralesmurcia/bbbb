@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Hipoteca 2026: Cuota Mensual e Intereses | CalculaTusFinanzas</title>
+<meta name="description" content="Calcula la cuota mensual de tu hipoteca, el total de intereses y lo que devuelves al banco según capital, tipo y plazo.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Calcula<span class="dot">Tus</span>Finanzas</a>
+    <nav class="main">
+      <a href="nomina.html">Nómina</a>
+      <a href="hipoteca.html" class="active">Hipoteca</a>
+      <a href="irpf.html">IRPF</a>
+      <a href="ahorro.html">Ahorro</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap calc-page">
+  <h1>Calculadora de hipoteca</h1>
+  <p class="sub">Calcula la cuota mensual de tu hipoteca a tipo fijo, el total de intereses que pagarás y el importe total devuelto al banco.</p>
+
+  <div class="calc-layout">
+    <div class="form-box">
+      <div class="field">
+        <label for="capital">Capital a financiar (€)</label>
+        <input type="number" id="capital" placeholder="Ej. 150000">
+      </div>
+      <div class="field">
+        <label for="tin">Tipo de interés nominal anual (%)</label>
+        <input type="number" step="0.01" id="tin" placeholder="Ej. 3.2">
+      </div>
+      <div class="field">
+        <label for="anios">Plazo (años)</label>
+        <input type="number" id="anios" placeholder="Ej. 25">
+      </div>
+      <button class="calc-btn" onclick="calcularHipoteca()">Calcular hipoteca</button>
+    </div>
+
+    <div class="receipt" id="resultado">
+      <div class="r-empty">Rellena capital, interés y plazo.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ad-slot">Espacio publicitario</div>
+</div>
+
+<section class="wrap info-block">
+  <h2>Cómo se calcula la cuota</h2>
+  <p>Se usa el sistema de amortización francés, el estándar en hipotecas en España: la cuota mensual es constante durante todo el préstamo, aunque al principio pagas más intereses y menos capital, y al final ocurre lo contrario.</p>
+  <h2>Aviso</h2>
+  <p>Esta calculadora estima hipotecas a tipo fijo. No incluye comisiones de apertura, seguros vinculados ni variaciones de tipo en hipotecas variables o mixtas.</p>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 CalculaTusFinanzas</span>
+    <div>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

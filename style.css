@@ -1,0 +1,284 @@
+/* ============================================
+   Calculadoras Finanzas — sistema de diseño
+   Concepto: recibo/ticket de caja registradora
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --bg: #0F1720;
+  --bg-alt: #141F2B;
+  --paper: #FBF7EE;
+  --paper-2: #F1EAD9;
+  --ink: #1B2430;
+  --ink-soft: #4A5568;
+  --muted: #8B93A0;
+  --line: rgba(255,255,255,0.08);
+  --line-paper: rgba(27,36,48,0.14);
+  --green: #2F9E6E;
+  --green-deep: #1F6E4C;
+  --gold: #C9973B;
+  --radius: 2px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#E7EAEE;
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+/* ---------- Header ---------- */
+header.site{
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+  position:sticky;top:0;
+  background:rgba(15,23,32,0.92);
+  backdrop-filter:blur(8px);
+  z-index:20;
+}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;}
+.logo{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:1.25rem;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+  color:#fff;
+  display:flex;align-items:center;gap:8px;
+}
+.logo .dot{color:var(--green);}
+nav.main a{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:0.92rem;
+  margin-left:26px;
+  transition:color .15s ease;
+}
+nav.main a:hover, nav.main a.active{color:#fff;}
+
+/* ---------- Hero ---------- */
+.hero{padding:64px 0 40px;}
+.hero .eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.78rem;
+  color:var(--gold);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(2.1rem,5vw,3.2rem);
+  line-height:1.08;
+  letter-spacing:-0.01em;
+  margin:0 0 18px;
+  max-width:15ch;
+}
+.hero p.lead{
+  color:var(--muted);
+  font-size:1.08rem;
+  max-width:52ch;
+  margin:0;
+}
+
+/* ---------- Grid of calculator cards (home) ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  padding:12px 0 72px;
+}
+.card{
+  background:var(--paper);
+  color:var(--ink);
+  border-radius:var(--radius);
+  padding:26px 24px 22px;
+  text-decoration:none;
+  display:block;
+  position:relative;
+  transition:transform .18s ease, box-shadow .18s ease;
+  box-shadow:0 1px 0 rgba(0,0,0,0.2);
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.35);}
+.card::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:0;height:8px;
+  background-image:radial-gradient(circle at 8px 0, transparent 6px, var(--paper) 6px);
+  background-size:16px 8px;
+  background-repeat:repeat-x;
+  transform:translateY(100%);
+}
+.card .tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.7rem;
+  color:var(--green-deep);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.card h3{
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  margin:8px 0 6px;
+}
+.card p{
+  color:var(--ink-soft);
+  font-size:0.92rem;
+  margin:0;
+}
+
+/* ---------- Calculator page layout ---------- */
+.calc-page{padding:48px 0 40px;}
+.calc-page h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.7rem,4vw,2.3rem);
+  margin:0 0 8px;
+}
+.calc-page .sub{color:var(--muted);margin:0 0 36px;max-width:60ch;}
+
+.calc-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+@media (max-width:760px){
+  .calc-layout{grid-template-columns:1fr;}
+}
+
+.form-box{
+  background:var(--bg-alt);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px;
+}
+.field{margin-bottom:18px;}
+.field label{
+  display:block;
+  font-size:0.85rem;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.field input, .field select{
+  width:100%;
+  background:#0B121A;
+  border:1px solid var(--line);
+  color:#fff;
+  padding:11px 12px;
+  border-radius:var(--radius);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.95rem;
+}
+.field input:focus, .field select:focus{
+  outline:2px solid var(--green);
+  outline-offset:1px;
+  border-color:var(--green);
+}
+button.calc-btn{
+  width:100%;
+  background:var(--green);
+  color:#08130D;
+  border:none;
+  padding:13px;
+  font-weight:600;
+  font-size:0.95rem;
+  border-radius:var(--radius);
+  cursor:pointer;
+  margin-top:6px;
+  transition:background .15s ease;
+}
+button.calc-btn:hover{background:#3CB77E;}
+button.calc-btn:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+
+/* ---------- Receipt result (signature element) ---------- */
+.receipt{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Mono',monospace;
+  padding:26px 24px 30px;
+  position:relative;
+  min-height:220px;
+}
+.receipt::before{
+  content:"";
+  position:absolute;top:-8px;left:0;right:0;height:8px;
+  background-image:radial-gradient(circle at 8px 8px, var(--bg) 6px, transparent 6px);
+  background-size:16px 16px;
+  background-repeat:repeat-x;
+  background-position:top;
+}
+.receipt::after{
+  content:"";
+  position:absolute;bottom:-8px;left:0;right:0;height:8px;
+  background-image:radial-gradient(circle at 8px 0, var(--bg) 6px, transparent 6px);
+  background-size:16px 8px;
+  background-repeat:repeat-x;
+}
+.receipt .r-title{
+  text-align:center;
+  font-size:0.72rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  border-bottom:1px dashed var(--line-paper);
+  padding-bottom:12px;
+  margin-bottom:14px;
+}
+.receipt .r-line{
+  display:flex;justify-content:space-between;
+  font-size:0.88rem;
+  padding:5px 0;
+  color:var(--ink-soft);
+}
+.receipt .r-line span:last-child{color:var(--ink);font-weight:500;}
+.receipt .r-total{
+  display:flex;justify-content:space-between;
+  border-top:1px dashed var(--line-paper);
+  margin-top:12px;padding-top:14px;
+  font-size:1.15rem;font-weight:600;
+}
+.receipt .r-total span:last-child{color:var(--green-deep);}
+.receipt .r-empty{color:var(--ink-soft);font-size:0.9rem;text-align:center;padding:40px 0;}
+
+/* ---------- Ad slots ---------- */
+.ad-slot{
+  border:1px dashed var(--line);
+  border-radius:var(--radius);
+  min-height:100px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);
+  font-size:0.75rem;
+  font-family:'IBM Plex Mono',monospace;
+  margin:32px 0;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+
+/* ---------- Info section ---------- */
+.info-block{padding:16px 0 56px;max-width:70ch;}
+.info-block h2{font-family:'Fraunces',serif;font-size:1.4rem;margin:32px 0 10px;}
+.info-block p{color:var(--muted);}
+
+/* ---------- Footer ---------- */
+footer.site{
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  color:var(--muted);
+  font-size:0.85rem;
+}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+footer.site a{text-decoration:none;color:var(--muted);margin-left:16px;}
+footer.site a:hover{color:#fff;}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;}
+}
